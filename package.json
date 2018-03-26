@@ -8,14 +8,28 @@
     "url": "https://github.com/woothemes/storefront.git"
   },
   "scripts": {
-    "build": "grunt",
-    "css": "grunt css",
-    "watch": "grunt watch"
+    "webpack": "./node_modules/.bin/webpack --config ./webpack/webpack.build.config.js",
+    "webpack-watch": "./node_modules/.bin/webpack --config ./webpack/webpack.dev.config.js",
+    "build": "./node_modules/.bin/grunt",
+    "css": "./node_modules/.bin/grunt css",
+    "watch": "./node_modules/.bin/grunt watch",
+    "dev": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.dev.config.js"
   },
   "license": "GPL-2.0+",
   "main": "Gruntfile.js",
   "devDependencies": {
     "autoprefixer": "^6.7.7",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
     "grunt": "~1.0.1",
     "grunt-checktextdomain": "^1.0.1",
     "grunt-contrib-compress": "^1.4.3",
@@ -26,16 +40,40 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-postcss": "^0.8.0",
     "grunt-rtlcss": "~2.0.1",
+    "grunt-run": "^0.8.0",
     "grunt-sass": "~2.0.0",
     "grunt-stylelint": "~0.9.0",
+    "grunt-webpack": "^3.1.1",
     "grunt-wp-i18n": "^1.0.0",
+    "less": "^3.0.1",
+    "less-loader": "^4.1.0",
     "node-bourbon": "~4.2.8",
     "node-sass": "~4.5.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
     "stylelint": "~8.2.0",
-    "susy": "~2.2.12"
+    "susy": "~2.2.12",
+    "webpack": "^4.2.0"
   },
   "engines": {
     "node": ">=0.8.0",
     "npm": ">=1.1.0"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "webpack": "^4.2.0",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-cli": "^2.0.13"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react",
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
   }
 }

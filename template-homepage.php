@@ -1,3 +1,4 @@
+<?php wp_enqueue_script('react_js'); ?>
 <?php
 /**
  * The template for displaying the homepage.
@@ -16,7 +17,7 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+      <div id="react-root"></div>
 			<?php
 			/**
 			 * Functions hooked in to homepage action

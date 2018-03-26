@@ -4,6 +4,15 @@ module.exports = function( grunt ) {
 
 	grunt.initConfig({
 
+    run: {
+      options: {
+        itterable: true
+      },
+      webpack: {
+        cmd: './node_modules/.bin/webpack --config ./webpack/webpack.dev.config.js'
+      }
+    },
+
 		// Autoprefixer.
 		postcss: {
 			options: {
@@ -228,9 +237,14 @@ module.exports = function( grunt ) {
 
 					// Welcome screen js
 					'assets/js/admin/welcome-screen/*js',
-					'!assets/js/admin/welcome-screen/*.min.js'
+					'!assets/js/admin/welcome-screen/*.min.js',
+
+          // react js
+          'assets/js/react/**/**/*js',
+          'assets/js/react/**/*js',
+          'assets/js/react/*js'
 				],
-				tasks: ['jshint', 'uglify']
+				tasks: ['jshint', 'uglify', 'run']
 			}
 		},
 
@@ -433,13 +447,15 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-postcss' );
 	grunt.loadNpmTasks( 'grunt-contrib-compress' );
 	grunt.loadNpmTasks( 'grunt-stylelint' );
+  grunt.loadNpmTasks( 'grunt-run' );
 
 
 	// Register tasks
 	grunt.registerTask( 'default', [
 		'css',
 		'jshint',
-		'uglify'
+		'uglify',
+    'run'
 	]);
 
 	grunt.registerTask( 'css', [
