@@ -1,45 +1,88 @@
-.video-background {
-  background: #000;
-  position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	margin-top: 25px;
-	height: 0;
-  z-index: -99;
-  -moz-box-shadow:    inset 0 0 10px #000000;
-  -webkit-box-shadow: inset 0 0 10px #000000;
-  box-shadow:         inset 0 0 10px #000000;
-  &::after {
-    display: block;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 150vw;
-    height: 150vh;
-    z-index: 1;
-    background: rgba(0,0,0,0.50)
-  }
-}
+// .video-background-two,
+// .video-background {
+//   background: #000;
+//   position: relative;
+// 	padding-bottom: 56.25%; /* 16:9 */
+// 	margin-top: 25px;
+// 	height: 0;
+//   z-index: -99;
+//   -moz-box-shadow:    inset 0 0 10px #000000;
+//   -webkit-box-shadow: inset 0 0 10px #000000;
+//   box-shadow:         inset 0 0 10px #000000;
+//   &::after {
+//     display: block;
+//     content: '';
+//     position: absolute;
+//     width: 75vw;
+//     height: 75vh;
+//     z-index: 1;
+//     background: rgba(0, 0, 0, 0.75);
+//     opacity: 0.5;
+//   }
+// }
 .video-foreground,
+.video-foreground-two,
+.video-background-two iframe,
 .video-background iframe {
-  width: 150vw;
-  height: 150vh;
-  margin-top: -25vh;
+  width: 100vw; // GOOD ONE
+  height: 56.25vw; /* height:width ratio = 9/16 = .5625  */ //GOOD ONE
+  // width: 400vw;
+  // height: 225vw; /* height:width ratio = 9/16 = .5625  */
+  background: black;
+  // max-height: 100vh;
+  // max-width: 177.78vh; /* 16/9 = 1.778 */
+  // margin-top: -100vh;
   pointer-events: none;
 }
 
+.video-background iframe,
+.video-background-two iframe {
+  width: 100%;
+  // position: fixed;
+};
+
 .logo-wrapper {
-  width: 320px;
+  height: 400px
+}
+
+.video-foreground,
+.video-foreground-two {
+  // filter: gray; /* IE6-9 */
+  // -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+  // filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+}
+
+.video-foreground,
+.video-background {
+  float:left;
+  width:75vw;
+  overflow: hidden;
+}
+
+.video-foreground-two,
+.video-background-two {
+  float:right;
+  width:75vw;
+  overflow: hidden;
+}
+
+.logo-wrapper {
+  width: 500px;
+  height: 500px;
   margin: 20px auto;
+  position: relative;
   .logo {
     width: 100%;
-    // -webkit-filter: drop-shadow(5px 5px 20px #000);
-    // filter: drop-shadow(5px 5px 20px #000);
+    // -webkit-filter: drop-shadow(5px 5px 5px #000);
+    // filter: drop-shadow(5px 5px 5px #000);
   }
 }
 
-#custom-bg {
-  width: 100%;
+.custom-bg {
+  width: 200%;
+  height: 100vh;
+  margin-left: -50%;
+  margin-top: -10%;
 }
 
 .animated {
@@ -80,4 +123,30 @@
 .fadeInUpBig {
   -webkit-animation-name: fadeInUpBig;
   animation-name: fadeInUpBig;
+}
+
+.splatter-bottom {
+  background-color: black;
+  width: 100%;
+  height: 100px;
+  margin-top: -40px;
+  z-index: 0;
+  position: relative;
+  // background-repeat: repeat-x;
+  transform: rotate(-2deg);
+  // background-position: center;
+  opacity: 1;
+}
+
+.splatter-top {
+  margin-top: -80px;
+  background-color: black;
+  width: 100%;
+  height: 100px;
+  z-index: 1;
+  position: absolute;
+  // background-repeat: repeat-x;
+  transform: rotate(2deg);
+  // background-position: center;
+  opacity: 1;
 }

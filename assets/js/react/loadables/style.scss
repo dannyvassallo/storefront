@@ -1,0 +1,16 @@
+.video-background-loader {
+  width: 100%;
+  height: 400px;
+  background-color: #000000;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-hidden {
+  display: none;
+}
+.loader-active {
+  display: block;
+}

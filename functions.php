@@ -68,9 +68,13 @@ if ( version_compare( get_bloginfo( 'version' ), '4.7.3', '>=' ) && ( is_admin()
  * https://github.com/woocommerce/theme-customisations
  */
 
- function react_js() {
-     if ( get_page_template_slug() == 'template-homepage.php' ) {
-         wp_enqueue_script('react_js', get_template_directory_uri() . '/dist/bundle.js', nil, '1.0', true);
-     }
- }
- add_action( 'wp_enqueue_scripts', 'react_js' );
+function react_js() {
+  if ( get_page_template_slug() == 'template-homepage.php' ) {
+    foreach( glob( get_template_directory(). '/dist/*.js' ) as $file ) {
+      $filename = substr($file, strrpos($file, '/') + 1);
+      wp_enqueue_script( $filename, get_template_directory_uri().'/dist/'.$filename, nil, '1.0', true);
+    }
+  }
+}
+
+add_action( 'wp_enqueue_scripts', 'react_js' );
