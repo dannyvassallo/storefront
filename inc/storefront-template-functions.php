@@ -316,10 +316,26 @@ if ( ! function_exists( 'storefront_page_header' ) ) {
 		?>
 		<header class="entry-header">
 			<?php
-			storefront_post_thumbnail( 'full' );
 			the_title( '<h1 class="entry-title">', '</h1>' );
 			?>
 		</header><!-- .entry-header -->
+		<?php
+	}
+}
+
+if ( ! function_exists( 'page_image_masthead' ) ) {
+	/**
+	 * Display the post masthead
+	 *
+	 * @since 1.0.0
+	 */
+	function page_image_masthead() {
+		?>
+      <div class="page-mast-head" style="background-image: url(
+  			<?php
+         the_post_thumbnail_url()
+  			?>)">
+      </div>
 		<?php
 	}
 }
@@ -603,7 +619,7 @@ if ( ! function_exists( 'storefront_recent_products' ) ) {
 			$args = apply_filters( 'storefront_recent_products_args', array(
 				'limit' 			=> 4,
 				'columns' 			=> 4,
-				'title'				=> __( 'Chiodo Bros. <a href="/shop">Official Store <i class="fa fa-shopping-cart"></i></a>', 'storefront' ),
+				'title'				=> __( 'Chiodo Bros. <a href="/store">Official Store <i class="fa fa-shopping-cart"></i></a>', 'storefront' ),
 			) );
 
 			$shortcode_content = storefront_do_shortcode( 'recent_products', apply_filters( 'storefront_recent_products_shortcode_args', array(

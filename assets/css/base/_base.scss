@@ -38,8 +38,7 @@
 }
 
 #react-root {
-  width: 100%;
-  min-height: 100vh;
+  width: 100% !important;
 }
 
 #primary {
@@ -67,6 +66,14 @@
   }
 }
 
+.page-mast-head {
+  width: 100% !important;
+	height: 20vh !important;
+	background-size: cover !important;
+	background-position: center center !important;
+	background-attachment: fixed !important;
+}
+
 button.menu-toggle span::before,
 button.menu-toggle::after,
 button.menu-toggle::before{
@@ -84,6 +91,18 @@ button.menu-toggle::before{
 
 #ypt_thumbs {
   border-left: 10px solid #7A1980 !important;
+}
+
+.homepage-cta {
+  width: 100% !important;
+  margin: 50px auto !important;
+  text-align: center !important;
+  a {
+    margin-bottom: 50px !important;
+    h4 {
+      margin: 0 !important;
+    }
+  }
 }
 
 body {

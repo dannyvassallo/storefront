@@ -42,7 +42,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|jpe?g|svg)$/i,
         use: [
           'file-loader',
           {
@@ -52,6 +52,11 @@ module.exports = {
             },
           },
         ],
+      },
+      {
+        test: /\.png$/,
+        exclude: /node_modules/,
+        loader: 'file-loader?name=images/[name].[ext]',
       }
     ]
   },
