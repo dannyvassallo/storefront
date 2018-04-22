@@ -56,7 +56,12 @@
 	do_action( 'storefront_before_content' ); ?>
 
 	<div id="content" class="site-content" tabindex="-1">
-    <div id="react-root"></div>
+    <?php
+      if ( get_page_template_slug() == 'template-homepage.php' ) {
+        echo "<div id=\"react-root\"></div>";
+      };
+    ?>
+
 		<div class="col-full">
 
 		<?php

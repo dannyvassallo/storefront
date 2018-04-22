@@ -21,13 +21,69 @@
 // Sass tools and helpers used across the project.
 @import '../sass/utils/mixins';
 @import '../sass/vendors/font-awesome/font-awesome';
-
 /**
  * Typography
  */
 
+.custom-logo {
+  float: right !important;
+  position: absolute !important;
+  left: -10px !important;
+  width: 30px !important;
+  bottom: 24px !important;
+}
+
+.site-info {
+  display: none !important;
+}
+
 #react-root {
   width: 100%;
+  min-height: 100vh;
+}
+
+#primary {
+  width: 100% !important;
+}
+
+#secondary, .entry-meta {
+  display: none !important;
+}
+
+.entry-content {
+  width: 100% !important;
+}
+
+@include susy-media (max-width $desktop) {
+  .custom-logo {
+    left: 0 !important;
+    top: 5px !important;
+  }
+}
+
+@include susy-media($desktop) {
+  #masthead {
+    margin-top: -60px !important;
+  }
+}
+
+button.menu-toggle span::before,
+button.menu-toggle::after,
+button.menu-toggle::before{
+ left: 50% !important;
+ margin-left: -7px !important;
+}
+
+.menu-toggle {
+  padding: 20px !important;
+}
+
+#ypt_wrapper {
+  border: 10px solid #7A1980 !important;
+}
+
+#ypt_thumbs {
+  border-left: 10px solid #7A1980 !important;
 }
 
 body {
@@ -440,9 +496,10 @@ body {
  * Footer
  */
 .site-footer {
-	background-color: #f3f3f3;
-	color: $color_body + #333;
+  background-color: #430d46 !important;
+	color: $color_body;
 	padding: ms(3) 0 ms(6);
+  margin-top: -50px;
 
 	h1,
 	h2,

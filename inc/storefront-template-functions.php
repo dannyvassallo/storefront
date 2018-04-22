@@ -126,9 +126,6 @@ if ( ! function_exists( 'storefront_credit' ) ) {
 		?>
 		<div class="site-info">
 			<?php echo esc_html( apply_filters( 'storefront_copyright_text', $content = '&copy; ' . get_bloginfo( 'name' ) . ' ' . date( 'Y' ) ) ); ?>
-			<?php if ( apply_filters( 'storefront_credit_link', true ) ) { ?>
-			<br /> <?php echo '<a href="https://woocommerce.com" target="_blank" title="' . esc_attr__( 'WooCommerce - The Best eCommerce Platform for WordPress', 'storefront' ) . '" rel="author">' . esc_html__( 'Built with Storefront &amp; WooCommerce', 'storefront' ) . '</a>' ?>
-			<?php } ?>
 		</div><!-- .site-info -->
 		<?php
 	}
@@ -230,7 +227,7 @@ if ( ! function_exists( 'storefront_primary_navigation' ) ) {
 	function storefront_primary_navigation() {
 		?>
 		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
-		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span><?php echo esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ); ?></span></button>
+		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"></button>
 			<?php
 			wp_nav_menu(
 				array(
@@ -606,7 +603,7 @@ if ( ! function_exists( 'storefront_recent_products' ) ) {
 			$args = apply_filters( 'storefront_recent_products_args', array(
 				'limit' 			=> 4,
 				'columns' 			=> 4,
-				'title'				=> __( 'New In', 'storefront' ),
+				'title'				=> __( 'Chiodo Bros. <a href="/shop">Official Store <i class="fa fa-shopping-cart"></i></a>', 'storefront' ),
 			) );
 
 			$shortcode_content = storefront_do_shortcode( 'recent_products', apply_filters( 'storefront_recent_products_shortcode_args', array(
