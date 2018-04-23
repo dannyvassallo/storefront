@@ -61,7 +61,11 @@
         echo "<div id=\"react-root\"></div>";
       };
     ?>
-
+    <?php
+      if ( is_singular() && has_post_thumbnail() && get_page_template_slug() != 'template-homepage.php' ) {
+        page_image_masthead();
+      };
+    ?>
 		<div class="col-full">
 
 		<?php

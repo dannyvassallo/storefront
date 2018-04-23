@@ -8,6 +8,7 @@ import splatter from '../../../../images/chiodobros/splatter.png'
 import splatterTop from '../../../../images/chiodobros/splattertop.png'
 import cx from 'classnames'
 import Loader from 'react-loaders'
+import MediaQuery from 'react-responsive'
 
 const themeBundlePath = '/wp-content/themes/chiodobros/dist/'
 const splatterBottomStyle = {}//{ backgroundImage: `url(${themeBundlePath}${splatter})` }
@@ -93,6 +94,15 @@ export default class VideoBackground extends React.Component {
             </div>
           </Background>
         </Parallax>
+        <MediaQuery maxWidth={900}>
+          <div class="image-wrapper">
+            <img
+              className={'fadeInUpBig animated logo'}
+              src={`${themeBundlePath}${logo}`}
+              alt="logo"
+            />
+          </div>
+        </MediaQuery>
         <div style={splatterBottomStyle} className="splatter-bottom"></div>
         <div style={splatterBottomStyle} className="splatter-bottom2"></div>
       </div>

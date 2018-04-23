@@ -66,19 +66,78 @@
   }
 }
 
+.page-mast-head-wrapper {
+  position: relative;
+}
+
+// @media (min-width: 968px) {
+//   .storefront-primary-navigation {
+//     padding-left: 100em !important;
+//   }
+// }
+
+@media (min-width: 768px) {
+  .primary-navigation {
+    margin-left: 40px !important;
+  }
+  .storefront-primary-navigation {
+    padding-left: 100em !important;
+  }
+  .custom-logo {
+    margin-left: 20px !important;
+  }
+}
+
 .page-mast-head {
   width: 100% !important;
 	height: 20vh !important;
 	background-size: cover !important;
 	background-position: center center !important;
 	background-attachment: fixed !important;
+  -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+  filter: grayscale(100%);
 }
 
-button.menu-toggle span::before,
-button.menu-toggle::after,
-button.menu-toggle::before{
- left: 50% !important;
- margin-left: -7px !important;
+.gradient {
+  width: 100% !important;
+  height: 20vh !important;
+  position: absolute;
+  top: 0;
+  background: -moz-linear-gradient(45deg, rgba(122,25,117,0.75) 0%, rgba(67,13,70,0.3) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, rgba(122,25,117,0.75) 0%,rgba(67,13,70,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, rgba(122,25,117,0.75) 0%,rgba(67,13,70,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf7a1975', endColorstr='#4d430d46',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.featured-image-wrapper {
+  // background-color: rgba(122,25,117, 0.3);
+  // width: 100%;
+  margin: 20px 0;
+}
+.featured-image {
+  width: 100% !important;
+  margin: 10px auto !important;
+  padding: 10px !important;
+  // max-width: 640px !important;
+}
+
+footer {
+  margin-top: 60px !important;
+}
+// button.menu-toggle span::before,
+// button.menu-toggle::after,
+// button.menu-toggle::before{
+//  left: 50% !important;
+//  margin-left: -7px !important;
+// }
+
+
+.storefront-handheld-footer-bar{
+  display: none !important;
+}
+
+.demo_store {
+  bottom: 0 !important;
 }
 
 .menu-toggle {
@@ -87,6 +146,7 @@ button.menu-toggle::before{
 
 #ypt_wrapper {
   border: 10px solid #7A1980 !important;
+  margin-bottom: 20px !important;
 }
 
 #ypt_thumbs {

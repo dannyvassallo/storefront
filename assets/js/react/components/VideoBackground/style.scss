@@ -93,8 +93,11 @@
     width: 200vw;
     height: 200vh;
     z-index: 1;
-    background: rgba(122, 0, 18, 0.75);
-    opacity: 0.5;
+    background: -moz-linear-gradient(45deg, rgba(122,25,117,0.75) 0%, rgba(67,13,70,0.3) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, rgba(122,25,117,0.75) 0%,rgba(67,13,70,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, rgba(122,25,117,0.75) 0%,rgba(67,13,70,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf7a1975', endColorstr='#4d430d46',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    // opacity: 0.5;
   }
 }
 
@@ -162,4 +165,18 @@
   transform: rotate(1.3deg);
   // background-position: center;
   opacity: 1;
+}
+
+@media only screen and (max-width: 900px) {
+  .react-parallax,
+  .splatter-top,
+  .splatter-top2,
+  .splatter-bottom,
+  .splatter-bottom2 {
+    display: none;
+  }
+}
+
+.image-wrapper {
+  overflow: hidden;
 }

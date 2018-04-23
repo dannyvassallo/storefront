@@ -227,8 +227,8 @@ if ( ! function_exists( 'storefront_primary_navigation' ) ) {
 	function storefront_primary_navigation() {
 		?>
 		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
-		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"></button>
-			<?php
+		<button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span></span></button>
+      <?php
 			wp_nav_menu(
 				array(
 					'theme_location'	=> 'primary',
@@ -331,10 +331,28 @@ if ( ! function_exists( 'page_image_masthead' ) ) {
 	 */
 	function page_image_masthead() {
 		?>
-      <div class="page-mast-head" style="background-image: url(
-  			<?php
-         the_post_thumbnail_url()
-  			?>)">
+      <div class="page-mast-head-wrapper">
+        <div class="page-mast-head" style="background-image: url(
+    			<?php
+           the_post_thumbnail_url()
+    			?>)">
+        </div>
+        <div class="gradient"></div>
+      </div>
+		<?php
+	}
+}
+
+if ( ! function_exists( 'page_featured_image' ) ) {
+	/**
+	 * Display the post masthead
+	 *
+	 * @since 1.0.0
+	 */
+	function page_featured_image() {
+		?>
+      <div class="featured-image-wrapper">
+        <img class="featured-image" src="<?php the_post_thumbnail_url() ?>" />
       </div>
 		<?php
 	}
@@ -349,6 +367,7 @@ if ( ! function_exists( 'storefront_page_content' ) ) {
 	function storefront_page_content() {
 		?>
 		<div class="entry-content">
+      <?php page_featured_image() ?>
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(

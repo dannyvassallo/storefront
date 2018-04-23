@@ -1,4 +1,3 @@
-<?php page_image_masthead(); ?>
 <?php
 /**
  * The template for displaying full width pages.

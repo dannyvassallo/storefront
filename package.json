@@ -72,6 +72,7 @@
     "react-loadable-visibility": "^2.4.2",
     "react-loaders": "^3.0.1",
     "react-parallax": "^1.7.0",
+    "react-responsive": "^4.1.0",
     "react-timeout": "^1.1.1",
     "react-timer": "^1.0.2",
     "react-youtube": "^7.6.0",
