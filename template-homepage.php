@@ -16,6 +16,7 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
+    <div id="particles-js"></div>
 		<main id="main" class="site-main" role="main">
       <section class="storefront-product-section storefront-recent-products">
         <h2 class="section-title">

@@ -37,6 +37,17 @@
   display: none !important;
 }
 
+#particles-js {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
 #react-root {
   width: 100% !important;
 }
@@ -103,10 +114,10 @@
   height: 20vh !important;
   position: absolute;
   top: 0;
-  background: -moz-linear-gradient(45deg, rgba(122,25,117,0.75) 0%, rgba(67,13,70,0.3) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, rgba(122,25,117,0.75) 0%,rgba(67,13,70,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, rgba(122,25,117,0.75) 0%,rgba(67,13,70,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf7a1975', endColorstr='#4d430d46',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  background: -moz-linear-gradient(45deg, rgba(48, 97, 172,0.75) 0%, rgba(48, 97, 172,0.3) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, rgba(48, 97, 172,0.75) 0%,rgba(48, 97, 172,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, rgba(48, 97, 172,0.75) 0%,rgba(48, 97, 172,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3061ac', endColorstr='#3061ac',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
 .featured-image-wrapper {
@@ -145,21 +156,24 @@ footer {
 }
 
 #ypt_wrapper {
-  border: 10px solid #7A1980 !important;
+  border: 10px solid #3061ac !important;
   margin-bottom: 20px !important;
 }
 
 #ypt_thumbs {
-  border-left: 10px solid #7A1980 !important;
+  border-left: 10px solid #3061ac !important;
 }
 
 .homepage-cta {
   width: 100% !important;
   margin: 50px auto !important;
   text-align: center !important;
+  color: black !important;
   a {
+    color: black !important;
     margin-bottom: 50px !important;
     h4 {
+      color: black !important;
       margin: 0 !important;
     }
   }
@@ -575,7 +589,7 @@ body {
  * Footer
  */
 .site-footer {
-  background-color: #430d46 !important;
+  background-color: #000000 !important;
 	color: $color_body;
 	padding: ms(3) 0 ms(6);
   margin-top: -50px;
@@ -585,8 +599,13 @@ body {
 	h3,
 	h4,
 	h5,
-	h6 {
-		color: $color_body + #222;
+	h6,
+  a,
+  i,
+  span,
+  ul,
+  li {
+		color: $color_body !important;
 	}
 
 	a:not( .button ) {
